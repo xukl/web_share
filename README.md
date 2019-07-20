@@ -9,3 +9,15 @@
 
 ## 这个项目意义何在？
 帮助不同设备之间传输文件。举个例子：手机和电脑要传文件，没有数据线/数据线坏了/电脑上没有合适的驱动，怎么办？希望此项目可以快速实现您传文件的目标。
+
+## 如何使用
+0. 首先得有[Lighttpd](https://www.lighttpd.net)
+1. ```git clone $CLONE_URL```
+2. 检查代码，并确认没有混入恶意代码
+3. 稍作修改：
+```bash
+cd $CLONED_PATH
+mkdir -p document-root/download
+$EDITOR lighttpd.conf # 至少要修改var.server_root这行
+lighttpd -f lighttpd.conf
+```
