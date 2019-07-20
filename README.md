@@ -12,12 +12,13 @@
 
 ## 如何使用
 0. 首先得有[Lighttpd](https://www.lighttpd.net)
-1. ```git clone $CLONE_URL```
+1. `git clone $CLONE_URL`
 2. 检查代码，并确认没有混入恶意代码
-3. 稍作修改：
+3. 稍作修改（在代码树的根目录中）：
 ```bash
-cd $CLONED_PATH
 mkdir -p document-root/download
 $EDITOR lighttpd.conf # 至少要修改var.server_root这行
-lighttpd -f lighttpd.conf
 ```
+4. 运行服务器（在代码的根目录中）：`lighttpd -f lighttpd.conf`
+
+服务器运行在localhost上，端口号见`lighttpd.conf`中`server.port`那行。
