@@ -15,9 +15,7 @@ then
 	exit
 fi
 
-env > /tmp/env
-
-PREFIX="$FILE_ROOT"
+FILE="$FILE_ROOT/$FILENAME"
 if ( cat > "$FILE" )
 then
 	response "500" "Internal Server Error" "Oops! Error occurred. "
