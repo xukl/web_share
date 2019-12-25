@@ -1,7 +1,9 @@
 var ctrl = document.getElementById("progress");
+var status_block = document.getElementById("status");
 
 function upload()
 {
+	status_block.style.backgroundColor="#ff0";
 	var reader = new FileReader();
 	var xhr = new XMLHttpRequest();
 	var file = document.getElementById("File").files[0];
@@ -13,7 +15,10 @@ function upload()
 	xhr.addEventListener("readystatechange", function(e) {
 		if (xhr.readyState == 4)
 			if (xhr.status == 200)
+			{
 				ctrl.value = 100;
+				status_block.style.backgroundColor="#0f0";
+			}
 			else
 				alert(xhr.statusText + "\n" + xhr.responseText);
 	}, false);
@@ -23,4 +28,10 @@ function upload()
 		xhr.send(evt.target.result);
 	};
 	reader.readAsArrayBuffer(file);
+}
+
+function clear_status()
+{
+	ctrl.value = 0;
+	status_block.style.backgroundColor="#f00";
 }
