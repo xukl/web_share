@@ -22,7 +22,7 @@ function upload()
 			else
 				alert(xhr.statusText + "\n" + xhr.responseText);
 	}, false);
-	xhr.open("POST", "./upload.sh?filename=" + encodeURI(file.name));
+	xhr.open("POST", "../upload.py?filename=" + encodeURI(file.name));
 	xhr.overrideMimeType('text/plain; charset=x-user-defined-binary');
 	reader.onload = function(evt) {
 		xhr.send(evt.target.result);

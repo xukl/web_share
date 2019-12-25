@@ -12,7 +12,7 @@ function upload()
 				alert(xhr.statusText + "\n" + xhr.responseText);
 	}, false);
 	var text_title = document.getElementById("title").value || "untitled";
-	xhr.open("POST", "./upload.sh?title=" + encodeURI(text_title) + ".txt");
+	xhr.open("POST", "../upload.py?filename=" + encodeURI(text_title) + ".txt");
 	xhr.overrideMimeType('text/plain; charset=x-user-defined-binary');
 	xhr.send(document.getElementById("main-text").value);
 }
