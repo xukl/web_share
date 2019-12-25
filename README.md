@@ -17,7 +17,7 @@
 3. 稍作修改（在代码树的根目录中）：
 ```bash
 mkdir -p document-root/download
-$EDITOR lighttpd.conf # 至少要修改var.server_root这行
+$EDITOR lighttpd.conf # 至少要修改var.server_root行与ssl相关行
 ```
 4. 运行服务器（在代码的根目录中）：`lighttpd -f lighttpd.conf`
 
