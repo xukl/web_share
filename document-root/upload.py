@@ -24,9 +24,12 @@ if '..' in filename or '/' in filename or not filename.isprintable():
 	response(400, 'Bad Request', 'Oops! Invalid file name.')
 	exit()
 
-file = getenv('FILE_ROOT') + '/' + filename
+if getenv('REQUEST_SCHEME') == 'https':
+    filepath = getenv('FILE_ROOT') + '/protected/' + filename
+else:
+    filepath = getenv('FILE_ROOT') + '/' + filename
 
-with open(file, 'wb') as f:
+with open(filepath, 'wb') as f:
 	f.write(stdin.buffer.read())
 
 response(200, 'OK', 'OK')
