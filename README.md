@@ -21,4 +21,4 @@ $EDITOR lighttpd.conf # 至少要修改var.server_root行与ssl相关行
 ```
 4. 运行服务器（在代码的根目录中）：`lighttpd -f lighttpd.conf`
 
-服务器运行在localhost上，端口号见`lighttpd.conf`中`server.port`那行。
+服务器运行在localhost上，端口号见`lighttpd.conf`中`server.port`那行（http端口）以及`$SERVER["socket"]`那行（https端口）。
