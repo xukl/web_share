@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<style>
-#status {
+.status-block {
 	height: 10px;
 	width: 10px;
 	display: inline-block;
@@ -13,11 +13,10 @@
 	</head>
 	<body>
 		<form method="POST">
-			<input type="file" id="File" onchange="clear_status();"/>
+			<input type="file" multiple id="File" onchange="clear_status();"/>
 			<input type="button" value="上传" onclick="upload();"/>
 		</form>
-		状态：<div id="status" style="background-color:#f00"></div>
-		<progress value="0" max="100" id="progress"></progress>
+		<div class="progress-area"></div>
 		<script src="./upload.js"></script>
 	</body>
 </html>
