@@ -39,7 +39,7 @@ function upload()
 				else
 					alert(xhr.statusText + "\n" + xhr.responseText);
 		}, false);
-		xhr.open("POST", "../upload.py?filename=" + encodeURI(file.name));
+		xhr.open("POST", "../upload.py?filename=" + encodeURIComponent(file.name));
 		xhr.overrideMimeType('text/plain; charset=x-user-defined-binary');
 		reader.onload = (evt) => { xhr.send(evt.target.result); };
 		reader.readAsArrayBuffer(file);
